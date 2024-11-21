@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { User } from "../types/user";
+import styles from "../styles/main.module.css"
 
 interface UserDataProps {
   counter: number;
@@ -27,18 +28,18 @@ const UserData: React.FC<UserDataProps> = ({ counter }) => {
   }, [counter]);
 
   return (
-    <div>
+    <div className={styles.userDataWrapper}>
       {loading ? (
-        <p>Loading user data...</p>
+        <p className={styles.loading}>Loading user data...</p>
       ) : user ? (
         <div>
-          <h3>{user.name}</h3>
-          <p>Email: {user.email}</p>
-          <p>Phone: {user.phone}</p>
-          <p>Website: {user.website}</p>
+          <h3 className={styles.userDataName}>{user.name}</h3>
+          <p className={styles.userDataText}>Email: {user.email}</p>
+          <p className={styles.userDataText}>Phone: {user.phone}</p>
+          <p className={styles.userDataText}>Website: {user.website}</p>
         </div>
       ) : (
-        <p>No user data available.</p>
+        <p className={styles.noData}>No user data available.</p>
       )}
     </div>
   );

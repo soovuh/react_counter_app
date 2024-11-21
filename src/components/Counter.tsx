@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/main.module.css"
 
 interface CounterProps {
   counter: number;
@@ -10,14 +11,10 @@ interface CounterProps {
 
 const Counter: React.FC<CounterProps> = ({ counter, onIncrement, onDecrement, min, max }) => {
   return (
-    <div>
-      <button onClick={onDecrement} disabled={counter === min}>
-        -
-      </button>
-      <span>Counter: {counter}</span>
-      <button onClick={onIncrement} disabled={counter === max}>
-        +
-      </button>
+    <div className={styles.counterWrapper}>
+      <button className={styles.counterButton} onClick={onDecrement} disabled={counter === min}>-</button>
+      <span className={styles.counterText}>Counter: {counter}</span>
+      <button className={styles.counterButton} onClick={onIncrement} disabled={counter === max}>+</button>
     </div>
   );
 };
