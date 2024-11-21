@@ -1,50 +1,76 @@
-# React + TypeScript + Vite
+# React Counter User Data App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a simple React application that fetches and displays user data from a public API. The app allows users to navigate through different user records using a counter. 
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Increment and decrement counter buttons, with a range between **1** and **10**.
+- Fetches user data dynamically from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).
+- Displays user details including:
+  - Name
+  - Email
+  - Phone
+  - Website
+- Modular CSS (`styles.module.css`) for organized and reusable styles.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: Component-based library for building user interfaces.
+- **TypeScript**: For static type-checking and improved developer experience.
+- **CSS Modules**: For scoped and modular styling.
+- **JSONPlaceholder API**: A free online REST API used for testing.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+### Getting Started
+
+Follow the instructions below to run this app locally.
+
+#### Prerequisites
+
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+#### Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/soovuh/react_counter_app.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd react_counter_app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+---
+
+### Running the App
+
+Start the development server:
+```bash
+npm run dev
+# or
+yarn run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The app will be available at `http://localhost:5173` in your browser.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Usage
+
+1. Use the `+` button to increment the counter.
+2. Use the `-` button to decrement the counter.
+3. View user information fetched dynamically as the counter changes.
+4. The counter is restricted to a range of **1–10**.
+
+---
