@@ -44,7 +44,11 @@ Ensure you have the following installed:
    ```bash
    cd react_counter_app
    ```
-3. Install dependencies:
+3. Switch to develop branch:
+   ```bash
+   git checkout develop
+   ```
+4. Install dependencies:
    ```bash
    npm install
    # or
